@@ -1,3 +1,5 @@
+const WIN_SCORE = 5;
+
 let computerChoice;
 let playerChoice;
 
@@ -79,6 +81,7 @@ function playRound(playerChoice, computerChoice) {
 			break;
 	}
 	refreshScores();
+	checkWinCondition();
 }
 
 function refreshScores() {
@@ -87,6 +90,28 @@ function refreshScores() {
 
 	para_computerScore.textContent = `Computer score: ${computerScore}`;
 	para_playerScore.textContent = `Player score: ${playerScore}`;
+}
+
+function checkWinCondition() {
+	const result = document.querySelector(".message");
+
+	if (computerScore === WIN_SCORE) {
+		result.textContent = "You lose! Better luck next time!";
+		endGame();
+	} else if (playerScore === WIN_SCORE) {
+		result.textContent = "You win! Congratulations!";
+		endGame();
+	}
+}
+
+function endGame() {
+	const btn_rock = document.querySelector(".rock");
+	const btn_paper = document.querySelector(".paper");
+	const btn_scissors = document.querySelector(".scissors");
+
+	btn_rock.disabled = true;
+	btn_paper.disabled = true;
+	btn_scissors.disabled = true;
 }
 
 const options = document.querySelector(".options");
