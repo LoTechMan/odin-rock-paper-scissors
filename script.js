@@ -1,7 +1,11 @@
 let computerChoice;
 let playerChoice;
 
+let computerScore = 0;
+let playerScore = 0;
+
 function getComputerChoice(min, max) {
+	// Always return a value between 0, and 2 (inclusive).
 	let choice = Math.floor(Math.random() * (max - min + 1)) + min;
 
 	if (choice === 0) {
@@ -10,30 +14,6 @@ function getComputerChoice(min, max) {
 		return "paper";
 	} else if (choice === 2) {
 		return "scissors";
-	}
-}
-
-let playerScore = 0;
-let computerScore = 0;
-
-function displayChoices() {
-	console.log("-> Your pick: " + playerChoice + "\n-> Opponent's pick: " + computerChoice);
-}
-
-function displayScores() {
-	console.log("-> Your score: " + playerScore + "\n-> Opponent's score: " + computerScore);
-}
-
-function displayFinalResults() {
-	console.log("[FINAL RESULTS]\n");
-	displayScores();
-
-	if (playerScore > computerScore) {
-		console.log("Congratulations! You win!");
-	} else if (playerScore < computerScore) {
-		console.log("You lose! Better luck next time!");
-	} else {
-		console.log("It's a tie!");
 	}
 }
 
