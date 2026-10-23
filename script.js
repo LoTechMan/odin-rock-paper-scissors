@@ -52,7 +52,6 @@ function playRound(playerChoice, computerChoice) {
 			} else {
 				result.textContent = `Round draw!`;
 			}
-			refreshScores();
 			break;
 
 		case "paper":
@@ -65,7 +64,6 @@ function playRound(playerChoice, computerChoice) {
 			} else {
 				result.textContent = `Round draw!`;
 			}
-			refreshScores();
 			break;
 		
 		case "scissors":
@@ -78,9 +76,9 @@ function playRound(playerChoice, computerChoice) {
 			} else {
 				result.textContent = `Round draw!`;
 			}
-			refreshScores();
 			break;
 	}
+	refreshScores();
 }
 
 function refreshScores() {
