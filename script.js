@@ -98,6 +98,7 @@ function playRound(humanChoice, computerChoice) {
 	}
 }
 
+/*
 function playGame() {
 	for (let i = 0; i < 5; i++) {
 		computerChoice = getComputerChoice(0, 2);
@@ -110,3 +111,4 @@ function playGame() {
 
 playGame();
 displayFinalResults();
+*/
