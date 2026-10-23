@@ -44,39 +44,39 @@ function playRound(playerChoice, computerChoice) {
 	switch (playerChoice) {
 		case "rock":
 			if (computerChoice === "scissors") {
-				result.textContent = "Round win! Rock beats scissors.";
+				result.textContent = `Round win! Rock beats scissors.`;
 				playerScore++;
 			} else if (computerChoice === "paper") {
-				result.textContent = "Round loss! Paper beats rock."
+				result.textContent = `Round loss! Paper beats rock.`
 				computerScore++;
 			} else {
-				result.textContent = "Round draw!";
+				result.textContent = `Round draw!`;
 			}
 			refreshScores();
 			break;
 
 		case "paper":
 			if (computerChoice === "rock") {
-				result.textContent = "Round win! Paper beats rock.";
+				result.textContent = `Round win! Paper beats rock.`;
 				playerScore++;
 			} else if (computerChoice === "scissors") {
-				result.textContent = "Round loss! Scissors beats paper.";
+				result.textContent = `Round loss! Scissors beats paper.`;
 				computerScore++;
 			} else {
-				result.textContent = "Round draw!";
+				result.textContent = `Round draw!`;
 			}
 			refreshScores();
 			break;
 		
 		case "scissors":
 			if (computerChoice === "paper") {
-				result.textContent = "Round win! Scissors beats paper.";
+				result.textContent = `Round win! Scissors beats paper.`;
 				playerScore++;
 			} else if (computerChoice === "rock") {
-				result.textContent = "Round loss! Rock beats scissors.";
+				result.textContent = `Round loss! Rock beats scissors.`;
 				computerScore++;
 			} else {
-				result.textContent = "Round draw!";
+				result.textContent = `Round draw!`;
 			}
 			refreshScores();
 			break;
@@ -87,15 +87,15 @@ function refreshScores() {
 	const para_computerScore = document.querySelector(".computer-score");
 	const para_playerScore = document.querySelector(".player-score");
 
-	para_computerScore.textContent = "Computer score: " + computerScore;
-	para_playerScore.textContent = "Player score: " + playerScore;
+	para_computerScore.textContent = `Computer score: ${computerScore}`;
+	para_playerScore.textContent = `Player score: ${playerScore}`;
 
 	if (computerScore === 5) {
 		const result = document.querySelector(".message");
-		result.textContent = "You lose! Better luck next time!";
+		result.textContent = `You lose! Better luck next time!`;
 	} else if (playerScore === 5) {
 		const result = document.querySelector(".message");
-		result.textContent = "You win! Congratulations!"
+		result.textContent = `You win! Congratulations!`
 	}
 }
 
