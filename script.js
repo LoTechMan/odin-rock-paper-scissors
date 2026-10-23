@@ -1,8 +1,8 @@
 let computerChoice;
 let playerChoice;
 
-let computerScore = 0;
-let playerScore = 0;
+let computerScore;
+let playerScore;
 
 function initGame() {
 	const btn_rock = document.querySelector(".rock");
@@ -89,14 +89,6 @@ function refreshScores() {
 
 	para_computerScore.textContent = `Computer score: ${computerScore}`;
 	para_playerScore.textContent = `Player score: ${playerScore}`;
-
-	if (computerScore === 5) {
-		const result = document.querySelector(".message");
-		result.textContent = `You lose! Better luck next time!`;
-	} else if (playerScore === 5) {
-		const result = document.querySelector(".message");
-		result.textContent = `You win! Congratulations!`
-	}
 }
 
 const options = document.querySelector(".options");
