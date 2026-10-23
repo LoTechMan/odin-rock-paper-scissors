@@ -81,7 +81,6 @@ function playRound(playerChoice, computerChoice) {
 			break;
 	}
 	refreshScores();
-	checkWinCondition();
 }
 
 function refreshScores() {
@@ -90,6 +89,8 @@ function refreshScores() {
 
 	para_computerScore.textContent = `Computer score: ${computerScore}`;
 	para_playerScore.textContent = `Player score: ${playerScore}`;
+
+	checkWinCondition();
 }
 
 function checkWinCondition() {
