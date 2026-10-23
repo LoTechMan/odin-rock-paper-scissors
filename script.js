@@ -41,42 +41,42 @@ function getComputerChoice(min, max) {
 }
 
 function playRound(playerChoice, computerChoice) {
-	const result = document.querySelector(".message");
+	const para_message = document.querySelector(".message");
 
 	switch (playerChoice) {
 		case "rock":
 			if (computerChoice === "scissors") {
-				result.textContent = `Round win! Rock beats scissors.`;
+				para_message.textContent = `Round win! Rock beats scissors.`;
 				playerScore++;
 			} else if (computerChoice === "paper") {
-				result.textContent = `Round loss! Paper beats rock.`
+				para_message.textContent = `Round loss! Paper beats rock.`
 				computerScore++;
 			} else {
-				result.textContent = `Round draw!`;
+				para_message.textContent = `Round draw!`;
 			}
 			break;
 
 		case "paper":
 			if (computerChoice === "rock") {
-				result.textContent = `Round win! Paper beats rock.`;
+				para_message.textContent = `Round win! Paper beats rock.`;
 				playerScore++;
 			} else if (computerChoice === "scissors") {
-				result.textContent = `Round loss! Scissors beats paper.`;
+				para_message.textContent = `Round loss! Scissors beats paper.`;
 				computerScore++;
 			} else {
-				result.textContent = `Round draw!`;
+				para_message.textContent = `Round draw!`;
 			}
 			break;
 		
 		case "scissors":
 			if (computerChoice === "paper") {
-				result.textContent = `Round win! Scissors beats paper.`;
+				para_message.textContent = `Round win! Scissors beats paper.`;
 				playerScore++;
 			} else if (computerChoice === "rock") {
-				result.textContent = `Round loss! Rock beats scissors.`;
+				para_message.textContent = `Round loss! Rock beats scissors.`;
 				computerScore++;
 			} else {
-				result.textContent = `Round draw!`;
+				para_message.textContent = `Round draw!`;
 			}
 			break;
 	}
@@ -94,13 +94,13 @@ function refreshScores() {
 }
 
 function checkWinCondition() {
-	const result = document.querySelector(".message");
+	const para_message = document.querySelector(".message");
 
 	if (computerScore === WIN_SCORE) {
-		result.textContent = "You lose! Better luck next time!";
+		para_message.textContent = "You lose! Better luck next time!";
 		endGame();
 	} else if (playerScore === WIN_SCORE) {
-		result.textContent = "You win! Congratulations!";
+		para_message.textContent = "You win! Congratulations!";
 		endGame();
 	}
 }
